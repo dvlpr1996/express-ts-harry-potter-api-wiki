@@ -23,10 +23,10 @@
     }
   ],
   "support": {
-    "issues": "https://github.com/dvlpr1996",
-    "source": "https://github.com/dvlpr1996"
+    "issues": "https://github.com/dvlpr1996/express-ts-harry-potter-api-wiki/issues",
+    "source": "https://github.com/dvlpr1996/express-ts-harry-potter-api-wiki"
   },
-  "homepage": "https://github.com/dvlpr1996",
+  "homepage": "https://github.com/dvlpr1996/express-ts-harry-potter-api-wiki",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.3",
