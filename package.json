@@ -28,6 +28,8 @@
   },
   "homepage": "https://github.com/dvlpr1996/express-ts-harry-potter-api-wiki",
   "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "@types/sqlite3": "^3.1.11",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.3",
     "connect-timeout": "^1.9.0",
@@ -38,6 +40,7 @@
     "helmet": "^8.0.0",
     "hpp": "^0.2.3",
     "module-alias": "^2.2.3",
+    "sqlite3": "^5.1.7",
     "zod": "^3.23.8"
   },
   "devDependencies": {
@@ -46,6 +49,7 @@
     "express": "^4.21.1",
     "nodemon": "^3.1.7",
     "prettier": "^3.3.3",
+    "prisma": "^5.22.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.3"
   },
