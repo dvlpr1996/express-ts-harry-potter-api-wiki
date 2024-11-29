@@ -28,44 +28,40 @@
   },
   "homepage": "https://github.com/dvlpr1996/express-ts-harry-potter-api-wiki",
   "dependencies": {
-    "@prisma/client": "^5.22.0",
     "@types/sqlite3": "^3.1.11",
+    "@typescript-eslint/eslint-plugin": "^8.16.0",
+    "@typescript-eslint/parser": "^8.16.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.3",
     "connect-timeout": "^1.9.0",
     "cors": "^2.8.5",
+    "eslint": "^9.15.0",
     "express-async-handler": "^1.2.0",
     "express-rate-limit": "^7.4.1",
     "express-validator": "^7.2.0",
     "helmet": "^8.0.0",
     "hpp": "^0.2.3",
-    "module-alias": "^2.2.3",
     "sqlite3": "^5.1.7",
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@prisma/client": "^6.0.0",
     "@types/express": "^5.0.0",
-    "@types/node": "^22.9.1",
+    "@types/node": "^22.10.1",
+    "eslint-config-prettier": "^9.1.0",
     "express": "^4.21.1",
     "nodemon": "^3.1.7",
     "prettier": "^3.3.3",
-    "prisma": "^5.22.0",
+    "prisma": "^6.0.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.6.3"
+    "typescript": "^5.7.2"
   },
   "scripts": {
     "start": "node dist/server.js",
     "build": "tsc",
     "dev": "nodemon --watch src --exec ts-node server.ts"
   },
-  "_moduleAliases": {
-    "@root": ".",
-    "@routes": "src/routes",
-    "@configs": "src/configs",
-    "@controllers": "src/controllers",
-    "@errors": "src/errors",
-    "@middlewares": "src/middlewares",
-    "@utils": "src/utils",
-    "@validations": "src/validations"
+  "prisma": {
+    "seed": "ts-node prisma/databaseSeeder.ts"
   }
 }
