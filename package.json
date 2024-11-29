@@ -1,0 +1,67 @@
+{
+  "name": "express-typescript-harry-potter-api-wiki",
+  "version": "1.0.0",
+  "main": "./src/app.ts",
+  "description": "harry potter api wiki with Express and typescript",
+  "repository": {
+    "type": "git",
+    "url": "fake"
+  },
+  "keywords": [
+    "express-typescript-harry-potter-api-wiki",
+    "express.js",
+    "javascript",
+    "typescript",
+    "rest api"
+  ],
+  "minimum-stability": "stable",
+  "authors": [
+    {
+      "name": "nima jahan bakhshian",
+      "email": "nimajahanbakhshian@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/dvlpr1996/express-ts-harry-potter-api-wiki/issues",
+    "source": "https://github.com/dvlpr1996/express-ts-harry-potter-api-wiki"
+  },
+  "homepage": "https://github.com/dvlpr1996/express-ts-harry-potter-api-wiki",
+  "dependencies": {
+    "@types/sqlite3": "^3.1.11",
+    "@typescript-eslint/eslint-plugin": "^8.16.0",
+    "@typescript-eslint/parser": "^8.16.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.3",
+    "connect-timeout": "^1.9.0",
+    "cors": "^2.8.5",
+    "eslint": "^9.15.0",
+    "express-async-handler": "^1.2.0",
+    "express-rate-limit": "^7.4.1",
+    "express-validator": "^7.2.0",
+    "helmet": "^8.0.0",
+    "hpp": "^0.2.3",
+    "sqlite3": "^5.1.7",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@prisma/client": "^6.0.0",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.1",
+    "eslint-config-prettier": "^9.1.0",
+    "express": "^4.21.1",
+    "nodemon": "^3.1.7",
+    "prettier": "^3.3.3",
+    "prisma": "^6.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  },
+  "scripts": {
+    "start": "node dist/server.js",
+    "build": "tsc",
+    "dev": "nodemon --watch src --exec ts-node server.ts"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/databaseSeeder.ts"
+  }
+}
