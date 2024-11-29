@@ -1,0 +1,163 @@
+[
+  {
+      "title": "harry potter and the philosopher's stone",
+      "author": "j. k. rowling",
+      "language": "english",
+      "genre": "fantasy",
+      "type": "novel for juvenile",
+      "country": "united kingdom",
+      "publisher": "bloomsbury (uk)",
+      "series_number": "1",
+      "isbn": "0-7475-3269-9",
+      "pages": "223",
+      "publish_date": [
+          {
+              "uk": "06-26-1997"
+          },
+          {
+              "us": "01-09-1998"
+          }
+      ],
+      "cover_path": "",
+      "book_info_url": "https://en.wikipedia.org/wiki/harry_potter_and_the_philosopher%27s_stone",
+      "summary": "It is a story about Harry Potter, an orphan brought up by his aunt and uncle because his parents were killed when he was a baby. Harry is unloved by his uncle and aunt but everything changes when he is invited to join Hogwarts School of Witchcraft and Wizardry and he finds out he's a wizard"
+  },
+  {
+      "title": "harry potter and the chamber of secrets",
+      "author": "j. k. rowling",
+      "language": "english",
+      "genre": "fantasy",
+      "type": "novel for juvenile",
+      "country": "united kingdom",
+      "publisher": "bloomsbury (uk)",
+      "series_number": "2",
+      "isbn": "0-7475-3849-2",
+      "pages": "251",
+      "publish_date": [
+          {
+              "uk": "07-02-1998"
+          },
+          {
+              "us": "02-06-1999"
+          }
+      ],
+      "cover_path": "",
+      "book_info_url": "https://en.wikipedia.org/wiki/harry_potter_and_the_chamber_of_secrets",
+      "summary": "The story follows Harry's tumultuous second year at Hogwarts School of Witchcraft and Wizardry, including an encounter with Voldemort, the wizard who killed Harry's parents."
+  },
+  {
+      "title": "harry potter and the prisoner of azkaban",
+      "author": "j. k. rowling",
+      "language": "english",
+      "genre": "fantasy",
+      "type": "novel for juvenile",
+      "country": "united kingdom",
+      "publisher": "bloomsbury (uk)",
+      "series_number": "3",
+      "isbn": "0-7475-4215-5",
+      "pages": "317",
+      "publish_date": [
+          {
+              "uk": "07-08-1999"
+          },
+          {
+              "us": "08-09-1999"
+          }
+      ],
+      "cover_path": "",
+      "book_info_url": "https://en.wikipedia.org/wiki/harry_potter_and_the_prisoner_of_azkaban",
+      "summary": "Harry Potter's third year at Hogwarts starts off badly when he learns deranged killer Sirius Black has escaped from Azkaban prison and is bent on murdering the teenage wizard. While Hermione's cat torments Ron's sickly rat, causing a rift among the trio"
+  },
+  {
+      "title": "harry potter and the goblet of fire",
+      "author": "j. k. rowling",
+      "language": "english",
+      "genre": "fantasy",
+      "type": "novel for juvenile",
+      "country": "united kingdom",
+      "publisher": "bloomsbury (uk)",
+      "series_number": "4",
+      "isbn": "0-7475-4624-x",
+      "pages": "636",
+      "publish_date": [
+          {
+              "uk": "07-08-2000"
+          },
+          {
+              "us": "07-08-2000"
+          }
+      ],
+      "cover_path": "",
+      "book_info_url": "https://en.wikipedia.org/wiki/harry_potter_and_the_goblet_of_fire",
+      "summary": "It follows Harry Potter, a wizard in his fourth year at Hogwarts School of Witchcraft and Wizardry, and the mystery surrounding the entry of Harry's name into the Triwizard Tournament, in which he is forced to compete."
+  },
+  {
+      "title": "harry potter and the order of the phoenix",
+      "author": "j. k. rowling",
+      "language": "english",
+      "genre": "fantasy",
+      "type": "novel for juvenile",
+      "country": "united kingdom",
+      "publisher": "bloomsbury (uk)",
+      "series_number": "5",
+      "isbn": "0-7475-5100-6",
+      "pages": "766",
+      "publish_date": [
+          {
+              "uk": "06-21-2003"
+          },
+          {
+              "us": "06-21-2003"
+          }
+      ],
+      "cover_path": "",
+      "book_info_url": "https://en.wikipedia.org/wiki/harry_potter_and_the_order_of_the_phoenix",
+      "summary": "Now in his fifth year at Hogwarts, Harry learns that many in the wizarding community do not know the truth of his encounter with Lord Voldemort. Cornelius Fudge, minister of Magic, appoints his toady, Dolores Umbridge, as Defense Against the Dark Arts teacher, for he fears that professor Dumbledore will take his job. But her teaching is deficient and her methods, cruel, so Harry prepares a group of students to defend the school against a rising tide of evil."
+  },
+  {
+      "title": "harry potter and the half-blood prince",
+      "author": "j. k. rowling",
+      "language": "english",
+      "genre": "fantasy",
+      "type": "novel for juvenile",
+      "country": "united kingdom",
+      "publisher": "bloomsbury (uk)",
+      "series_number": "6",
+      "isbn": "0-7475-8108-8",
+      "pages": "607",
+      "publish_date": [
+          {
+              "uk": "07-16-2005"
+          },
+          {
+              "us": "07-16-2005"
+          }
+      ],
+      "cover_path": "",
+      "book_info_url": "https://en.wikipedia.org/wiki/harry_potter_and_the_half-blood_prince",
+      "summary": "As Death Eaters wreak havoc in both Muggle and Wizard worlds, Hogwarts is no longer a safe haven for students. Though Harry  suspects there are new dangers lurking within the castle walls, Dumbledore is more intent than ever on preparing the young wizard for the final battle with Voldemort."
+  },
+  {
+      "title": "harry potter and the deathly hallows",
+      "author": "j. k. rowling",
+      "language": "english",
+      "genre": "fantasy",
+      "type": "novel for juvenile",
+      "country": "united kingdom",
+      "publisher": "bloomsbury (uk)",
+      "series_number": "7",
+      "isbn": "0-7475-9105-9",
+      "pages": "607",
+      "publish_date": [
+          {
+              "uk": "07-21-2007"
+          },
+          {
+              "us": "07-21-2007"
+          }
+      ],
+      "cover_path": "",
+      "book_info_url": "https://en.wikipedia.org/wiki/harry_potter_and_the_deathly_hallows",
+      "summary": "The Deathly Hallows is about Harry Potter and his friends finding ways to destroy Voldemort. They learn that even good contains a bit of evil, and vise versa. Even though the trio faces many difficulties, they persevere. And most importantly, they learn that love conquers fear, and this allows then to be selfless in many ways."
+  }
+]

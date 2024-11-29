@@ -1,0 +1,74 @@
+[
+  {
+      "name": "gryffindor",
+      "color": "scarlet and gold",
+      "ghost": "sir nicholas de mimsy-porpington",
+      "common_room": [
+          {
+              "location": "gryffindor tower"
+          },
+          {
+              "entrance": "seventh floor"
+          }
+      ],
+      "founder": "godric gryffindor",
+      "animal": "lion",
+      "element": "fire",
+      "slogan": "their daring, nerve and chivalry set gryffindors apart",
+      "banner": "houses/gryffindor.jpg"
+  },
+  {
+      "name": "hufflepuff",
+      "color": "yellow and black",
+      "ghost": "fat friar",
+      "common_room": [
+          {
+              "location": "near the castle's kitchens"
+          },
+          {
+              "entrance": "one floor below the ground"
+          }
+      ],
+      "founder": "helga hufflepuff",
+      "animal": "badger",
+      "element": "earth",
+      "slogan": "those patient hufflepuffs are true and unafraid of toil",
+      "banner": "houses/hufflepuff.jpg"
+  },
+  {
+      "name": "slytherin",
+      "color": "green and silver",
+      "ghost": "bloody baron",
+      "common_room": [
+          {
+              "location": "slytherin dungeon"
+          },
+          {
+              "entrance": "right side of the entrance hall"
+          }
+      ],
+      "founder": "salazar slytherin",
+      "animal": "serpent",
+      "element": "water",
+      "slogan": "slytherin will help you on your way to greatness",
+      "banner": "houses/slytherin.jpg"
+  },
+  {
+      "name": "ravenclaw",
+      "color": "blue and bronze",
+      "ghost": "grey lady",
+      "common_room": [
+          {
+              "location": "tower on the west side of the castle"
+          },
+          {
+              "entrance": "at the top of a spiral staircase located on the fifth floor"
+          }
+      ],
+      "founder": "rowena ravenclaw",
+      "animal": "eagle",
+      "element": "air",
+      "slogan": "wit beyond measure is man's greatest treasure",
+      "banner": "houses/ravenclaw.jpg"
+  }
+]
