@@ -1,0 +1,21 @@
+model Book {
+  id            Int      @id @default(autoincrement())
+  title         String   @unique
+  slug          String   @unique
+  author        String
+  language      String
+  genre         String
+  type          String
+  country       String
+  seriesNumber  String
+  isbn          String   @unique
+  pages         String
+  ukPublishDate String
+  usPublishDate String
+  coverPath     String?
+  bookInfoUrl   String?
+  summary       String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @default(now()) @updatedAt
+  @@map("books")
+}

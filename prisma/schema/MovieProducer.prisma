@@ -1,0 +1,11 @@
+model MovieProducer {
+  id         Int      @id @default(autoincrement())
+  movieId    Int
+  producerId Int
+  movie      Movie    @relation(fields: [movieId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  producer   Producer @relation(fields: [producerId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @default(now()) @updatedAt
+
+  @@map("movie_producer")
+}

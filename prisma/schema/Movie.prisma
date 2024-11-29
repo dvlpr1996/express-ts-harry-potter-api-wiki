@@ -1,0 +1,25 @@
+model Movie {
+  id               Int      @id @default(autoincrement())
+  title            String   @unique
+  slug             String   @unique
+  director         String
+  boxOffice        String
+  usRating         String
+  ukRating         String
+  novelWriter      String
+  screenplayWriter String
+  releaseDate      String
+  runningTime      String
+  budget           String
+  poster           String?
+  createdAt        DateTime @default(now()) @map("created_at")
+  updatedAt        DateTime @updatedAt @map("updated_at")
+
+  stars     Star[]     @relation("stars")
+  producers Producer[] @relation("producers")
+
+  MovieStar MovieStar[]
+  MovieProducer MovieProducer[]
+  
+  @@map("movies")
+}

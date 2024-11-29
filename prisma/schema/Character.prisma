@@ -1,0 +1,20 @@
+model Character {
+  id          Int      @id @default(autoincrement())
+  name        String   @unique
+  slug        String   @unique
+  type        String
+  species     String
+  gender      String
+  houseId     Int?
+  house       House?    @relation(fields: [houseId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  dateOfBirth String?
+  ancestry    String?
+  isWizard    Boolean?
+  patronus    String?
+  wandCore    String?
+  isAlive     Boolean?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now()) @updatedAt
+
+  @@map("characters")
+}

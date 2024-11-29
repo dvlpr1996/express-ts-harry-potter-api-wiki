@@ -1,0 +1,11 @@
+model Spell {
+  id            Int      @id @default(autoincrement())
+  name          String   @unique
+  slug          String   @unique
+  pronunciation String?
+  description   String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @default(now()) @updatedAt
+
+  @@map("spells")
+}

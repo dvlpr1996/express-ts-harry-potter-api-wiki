@@ -1,0 +1,21 @@
+model House {
+  id                 Int       @id @default(autoincrement())
+  name               String    @unique
+  slug               String    @unique
+  color              String
+  ghostName          String    @unique
+  commonRoomLocation String
+  commonRoomEntrance String
+  founder            String    @unique
+  animal             String
+  element            String
+  slogan             String?
+  bannerPath         String?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @default(now()) @updatedAt
+  features           Feature[]
+
+  Character Character[]
+  
+  @@map("houses")
+}
