@@ -1,8 +1,8 @@
 import rateLimit from 'express-rate-limit';
 
 const rateLimitConfig = rateLimit({
-  windowMs: 1 * 60 * 1000,
-  max: 300,
+  windowMs: (process.env.RATE_LIMIT_WINDOW_MS as number | undefined) || 15 * 60 * 1000,
+  max: (process.env.RATE_LIMIT_MAX_REQUESTS as number | undefined) || 10,
   statusCode: 429,
   message: {
     status: 429,
