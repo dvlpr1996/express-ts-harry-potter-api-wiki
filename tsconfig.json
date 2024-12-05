@@ -6,6 +6,7 @@
     "rootDirs": ["src", "prisma"],
     "outDir": "./dist",
     "strict": true,
+    "skipLibCheck": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
     "noImplicitAny": true,
@@ -18,7 +19,6 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "skipLibCheck": true,
     "moduleResolution": "node",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true

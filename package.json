@@ -40,18 +40,19 @@
     "express-validator": "^7.2.0",
     "helmet": "^8.0.0",
     "hpp": "^0.2.3",
-    "sqlite3": "^5.1.7",
-    "zod": "^3.23.8"
+    "sqlite3": "^5.1.7"
   },
   "devDependencies": {
-    "@prisma/client": "^6.0.0",
+    "@prisma/client": "^6.0.1",
+    "@types/compression": "^1.7.5",
+    "@types/connect-timeout": "^0.0.39",
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.1",
     "eslint-config-prettier": "^9.1.0",
     "express": "^4.21.1",
     "nodemon": "^3.1.7",
     "prettier": "^3.3.3",
-    "prisma": "^6.0.0",
+    "prisma": "^6.0.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2"
   },
