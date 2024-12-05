@@ -1,5 +1,15 @@
 import { param, query } from 'express-validator';
 
+export const validatePageQuery = [
+  query('page')
+    .optional()
+    .isInt({ min: 1 })
+    .withMessage('page must be a positive integer')
+    .trim()
+    .escape()
+    .toInt(),
+];
+
 export const validateBookIdParam = [
   param('bookId')
     .isInt({ min: 1, max: 7 })
@@ -38,12 +48,21 @@ export const validateCharacterSlugParam = [
     .escape(),
 ];
 
-export const validateCharacterPageQuery = [
-  query('page')
-    .optional()
-    .isInt({ min: 1 })
-    .withMessage('page must be a positive integer')
+export const validateIdParam = [
+  param('id')
+    .isInt({ min: 1, max: 7 })
+    .withMessage('ID must be a positive integer')
     .trim()
     .escape()
     .toInt(),
+];
+
+export const validateSlugParam = [
+  param('slug')
+    .isSlug()
+    .withMessage('slug is not valid')
+    .isLength({ min: 1, max: 128 })
+    .withMessage('Slug cannot be empty')
+    .trim()
+    .escape(),
 ];

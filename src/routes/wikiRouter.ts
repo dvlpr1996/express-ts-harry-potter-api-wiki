@@ -14,8 +14,10 @@ import {
   validateBookIdParam,
   validateBookSlugParam,
   validateCharacterIdParam,
-  validateCharacterPageQuery,
   validateCharacterSlugParam,
+  validateIdParam,
+  validatePageQuery,
+  validateSlugParam,
 } from '../validation/validateParam';
 
 // Book routes
@@ -24,7 +26,7 @@ wikiRouter.get('/books/:bookId([1-7])', validateBookIdParam, bookController.show
 wikiRouter.get('/books/:bookSlug([a-zA-z-]+)', validateBookSlugParam, bookController.showBySlug);
 
 // Character routes
-wikiRouter.get('/characters', validateCharacterPageQuery, characterController.index);
+wikiRouter.get('/characters', validatePageQuery, characterController.index);
 wikiRouter.get(
   '/characters/:characterId([\\d]+)',
   validateCharacterIdParam,
@@ -37,9 +39,10 @@ wikiRouter.get(
   characterController.showBySlug
 );
 
-// // Spell routes
-// wikiRouter.get('/spells', spellController.index);
-// wikiRouter.get('/spells/:spell', spellController.show);
+// Spell routes
+wikiRouter.get('/spells', validatePageQuery, spellController.index);
+wikiRouter.get('/spells/:id([\\d]+)', validateIdParam, spellController.showById);
+wikiRouter.get('/spells/:slug([a-zA-z-]+)', validateSlugParam, spellController.showBySlug);
 
 // // Potion routes
 // wikiRouter.get('/potions', potionController.index);
@@ -67,13 +70,5 @@ wikiRouter.get(
 // wikiRouter.get('/movies/:movie', movieController.show);
 // wikiRouter.get('/movies/:movie/stars', movieController.showStars);
 // wikiRouter.get('/movies/:movie/producers', movieController.showProducers);
-
-// Fallback route
-wikiRouter.use((req: Request, res: Response) => {
-  res.status(404).json({
-    status: 'error',
-    message: 'Error 404: Not Found',
-  });
-});
 
 export default wikiRouter;
