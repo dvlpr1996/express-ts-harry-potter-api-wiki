@@ -12,10 +12,8 @@ import normalCharacterController from '../controllers/normalCharacterController'
 import movieController from '../controllers/movieController';
 import {
   validateBookIdParam,
-  validateBookSlugParam,
-  validateCharacterIdParam,
-  validateCharacterSlugParam,
   validateIdParam,
+  validateIdsParam,
   validatePageQuery,
   validateSlugParam,
 } from '../validation/validateParam';
@@ -23,25 +21,18 @@ import {
 // Book routes
 wikiRouter.get('/books', bookController.index);
 wikiRouter.get('/books/:bookId([1-7])', validateBookIdParam, bookController.showById);
-wikiRouter.get('/books/:bookSlug([a-zA-z-]+)', validateBookSlugParam, bookController.showBySlug);
+wikiRouter.get('/books/:slug([a-zA-z-]+)', validateSlugParam, bookController.showBySlug);
 
 // Character routes
 wikiRouter.get('/characters', validatePageQuery, characterController.index);
-wikiRouter.get(
-  '/characters/:characterId([\\d]+)',
-  validateCharacterIdParam,
-  characterController.showById
-);
-
-wikiRouter.get(
-  '/characters/:characterSlug([a-zA-z-]+)',
-  validateCharacterSlugParam,
-  characterController.showBySlug
-);
+wikiRouter.get('/characters/:id([\\d]+)', validateIdParam, characterController.showById);
+wikiRouter.get('/characters/:ids([\\d,]+)', validateIdsParam, characterController.showByIds);
+wikiRouter.get('/characters/:slug([a-zA-z-]+)', validateSlugParam, characterController.showBySlug);
 
 // Spell routes
 wikiRouter.get('/spells', validatePageQuery, spellController.index);
 wikiRouter.get('/spells/:id([\\d]+)', validateIdParam, spellController.showById);
+// wikiRouter.get('/spells/:ids([\\d,]+)', validateIdsParam, spellController.showByIds);
 wikiRouter.get('/spells/:slug([a-zA-z-]+)', validateSlugParam, spellController.showBySlug);
 
 // // Potion routes

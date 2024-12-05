@@ -23,11 +23,9 @@ const bookController = {
   showById: expressAsyncHandler(async (req: Request, res: Response) => {
     if (!paramValidation(req, res)) return;
 
-    const bookId = parseInt(req.params.bookId, 10);
-
     try {
       const book = await prisma.book.findFirstOrThrow({
-        where: { id: bookId },
+        where: { id: parseInt(req.params.bookId, 10) },
       });
       res.status(200).json({ success: true, data: bookDto(book) });
     } catch (err) {
@@ -38,11 +36,9 @@ const bookController = {
   showBySlug: expressAsyncHandler(async (req: Request, res: Response) => {
     if (!paramValidation(req, res)) return;
 
-    const bookSlug = req.params.bookSlug;
-
     try {
       const book = await prisma.book.findFirstOrThrow({
-        where: { slug: bookSlug },
+        where: { slug: req.params.slug },
       });
       res.status(200).json({ success: true, data: bookDto(book) });
     } catch (err) {

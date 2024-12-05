@@ -19,35 +19,6 @@ export const validateBookIdParam = [
     .toInt(),
 ];
 
-export const validateBookSlugParam = [
-  param('bookSlug')
-    .isSlug()
-    .withMessage('slug is not valid')
-    .isLength({ min: 1, max: 128 })
-    .withMessage('Slug cannot be empty')
-    .trim()
-    .escape(),
-];
-
-export const validateCharacterIdParam = [
-  param('characterId')
-    .isInt({ min: 1 })
-    .withMessage('ID must be a positive integer')
-    .trim()
-    .escape()
-    .toInt(),
-];
-
-export const validateCharacterSlugParam = [
-  param('characterSlug')
-    .isSlug()
-    .withMessage('slug is not valid')
-    .isLength({ min: 1, max: 128 })
-    .withMessage('Slug cannot be empty')
-    .trim()
-    .escape(),
-];
-
 export const validateIdParam = [
   param('id')
     .isInt({ min: 1, max: 7 })
@@ -55,6 +26,19 @@ export const validateIdParam = [
     .trim()
     .escape()
     .toInt(),
+];
+
+export const validateIdsParam = [
+  param('ids')
+    .custom((value) => {
+      const ids = value.split(',');
+      if (ids.some((id: string) => isNaN(parseInt(id, 10)) || parseInt(id, 10) <= 0)) {
+        throw new Error('IDs must be a comma-separated list of positive integers');
+      }
+      return true;
+    })
+    .trim()
+    .escape(),
 ];
 
 export const validateSlugParam = [
