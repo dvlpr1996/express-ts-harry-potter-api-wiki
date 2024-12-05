@@ -1,7 +1,6 @@
 import express, { Request, Response } from 'express';
 const wikiRouter = express.Router();
 
-import apiController from '../controllers/apiController';
 import bookController from '../controllers/bookController';
 import characterController from '../controllers/characterController';
 import spellController from '../controllers/spellController';
@@ -11,18 +10,32 @@ import staffController from '../controllers/staffController';
 import studentController from '../controllers/studentController';
 import normalCharacterController from '../controllers/normalCharacterController';
 import movieController from '../controllers/movieController';
-import { validateBookIdParam, validateBookSlugParam } from '../validation/validateParam';
-
-// wikiRouter.get('/', apiController.index);
+import {
+  validateBookIdParam,
+  validateBookSlugParam,
+  validateCharacterIdParam,
+  validateCharacterPageQuery,
+  validateCharacterSlugParam,
+} from '../validation/validateParam';
 
 // Book routes
 wikiRouter.get('/books', bookController.index);
 wikiRouter.get('/books/:bookId([1-7])', validateBookIdParam, bookController.showById);
 wikiRouter.get('/books/:bookSlug([a-zA-z-]+)', validateBookSlugParam, bookController.showBySlug);
 
-// // Character routes
-// wikiRouter.get('/characters', characterController.index);
-// wikiRouter.get('/characters/:character', characterController.show);
+// Character routes
+wikiRouter.get('/characters', validateCharacterPageQuery, characterController.index);
+wikiRouter.get(
+  '/characters/:characterId([\\d]+)',
+  validateCharacterIdParam,
+  characterController.showById
+);
+
+wikiRouter.get(
+  '/characters/:characterSlug([a-zA-z-]+)',
+  validateCharacterSlugParam,
+  characterController.showBySlug
+);
 
 // // Spell routes
 // wikiRouter.get('/spells', spellController.index);

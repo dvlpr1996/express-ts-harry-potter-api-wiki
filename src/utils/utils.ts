@@ -1,5 +1,6 @@
-import { Request, Response } from "express";
-import { validationResult } from "express-validator";
+import { Request, Response } from 'express';
+import { validationResult } from 'express-validator';
+import { PAGINATION_TAKE_NUMBER } from '../config/constant';
 
 export const paramValidation = (req: Request, res: Response): boolean => {
   const errors = validationResult(req);
@@ -12,4 +13,14 @@ export const paramValidation = (req: Request, res: Response): boolean => {
     return false;
   }
   return true;
+};
+
+export const pagination = (totalItems: number, currentPage: number) => {
+  const totalPages = Math.ceil(totalItems / PAGINATION_TAKE_NUMBER);
+  return {
+    pages: totalPages,
+    currentPage,
+    hasNextPage: currentPage < totalPages,
+    hasPreviousPage: currentPage > 1,
+  };
 };

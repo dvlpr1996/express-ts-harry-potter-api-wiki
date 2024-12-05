@@ -45,7 +45,6 @@ app.use(
 app.use(rateLimitConfig);
 
 app.use('/api/v1', wikiRouter);
-
 app.all('*', (req: Request, res: Response, next: NextFunction) => {
   throw new Error(`The Route '${req.originalUrl}' Does Not Exists`);
 });
