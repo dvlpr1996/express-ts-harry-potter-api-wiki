@@ -1,5 +1,5 @@
 import path from 'path';
-import { JSON_DATA_PATH } from '../config/constant/constant';
+import { JSON_DATA_PATH } from '../config/constant';
 import fs from 'fs';
 
 /**
