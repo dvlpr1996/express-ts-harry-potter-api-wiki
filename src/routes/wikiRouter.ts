@@ -35,9 +35,11 @@ wikiRouter.get('/spells/:id([\\d]+)', validateIdParam, spellController.showById)
 wikiRouter.get('/spells/:ids([\\d,]+)', validateIdsParam, spellController.showByIds);
 wikiRouter.get('/spells/:slug([a-zA-z-]+)', validateSlugParam, spellController.showBySlug);
 
-// // Potion routes
-// wikiRouter.get('/potions', potionController.index);
-// wikiRouter.get('/potions/:potion', potionController.show);
+// Potion routes
+wikiRouter.get('/potions', potionController.index);
+wikiRouter.get('/potions/:id([\\d]+)', potionController.showById);
+wikiRouter.get('/potions/:ids([\\d,]+)', validateIdsParam, potionController.showByIds);
+wikiRouter.get('/potions/:slug([a-zA-z-]+)', validateSlugParam, potionController.showBySlug);
 
 // // House routes
 // wikiRouter.get('/houses', houseController.index);

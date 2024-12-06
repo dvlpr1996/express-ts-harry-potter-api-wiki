@@ -3,47 +3,47 @@ import expressAsyncHandler from 'express-async-handler';
 import { pagination, paramValidation } from '../utils/utils';
 import prisma from '../boot/prisma/prisma';
 import { PAGINATION_TAKE_NUMBER } from '../config/constant';
-import spellDto from '../libs/dtos/spellDto';
+import potionDto from '../libs/dtos/potionDto';
 
-const spellController = {
+const potionController = {
   index: expressAsyncHandler(async (req: Request, res: Response) => {
     if (!paramValidation(req, res)) return;
 
     const page = parseInt(req.query.page as string, 10) || 1;
 
-    const [spells, totalSpells] = await prisma.$transaction([
-      prisma.spell.findMany({
+    const [potions, totalPotions] = await prisma.$transaction([
+      prisma.potion.findMany({
         skip: (page - 1) * PAGINATION_TAKE_NUMBER,
         take: PAGINATION_TAKE_NUMBER,
       }),
-      prisma.spell.count(),
+      prisma.potion.count(),
     ]);
 
-    if (spells.length === 0) {
-      res.status(404).json({ success: false, data: 'There are no spell' });
+    if (potions.length === 0) {
+      res.status(404).json({ success: false, data: 'There are no potion' });
       return;
     }
 
     res.status(200).json({
       success: true,
-      length: totalSpells,
-      data: spells.map(spellDto),
-      pagination: pagination(totalSpells, page),
+      length: totalPotions,
+      data: potions.map(potionDto),
+      pagination: pagination(totalPotions, page),
     });
   }),
 
   showById: expressAsyncHandler(async (req: Request, res: Response) => {
     if (!paramValidation(req, res)) return;
 
-    const spellId = parseInt(req.params.id, 10);
+    const potionId = parseInt(req.params.id, 10);
 
     try {
-      const spell = await prisma.spell.findFirstOrThrow({
-        where: { id: spellId },
+      const potion = await prisma.potion.findFirstOrThrow({
+        where: { id: potionId },
       });
-      res.status(200).json({ success: true, data: spellDto(spell) });
+      res.status(200).json({ success: true, data: potionDto(potion) });
     } catch (err) {
-      res.status(404).json({ success: false, data: 'spell Not Found' });
+      res.status(404).json({ success: false, data: 'potion Not Found' });
     }
   }),
 
@@ -54,42 +54,40 @@ const spellController = {
 
     const ids = req.params.ids.split(',').map((id) => parseInt(id, 10));
 
-    const [spells, totalSpells] = await prisma.$transaction([
-      prisma.spell.findMany({
+    const [potions, totalPotions] = await prisma.$transaction([
+      prisma.potion.findMany({
         where: { id: { gte: ids[0], lte: ids[1] } },
         skip: (page - 1) * PAGINATION_TAKE_NUMBER,
         take: PAGINATION_TAKE_NUMBER,
       }),
-      prisma.spell.count({ where: { id: { gte: ids[0], lte: ids[1] } } }),
+      prisma.potion.count({ where: { id: { gte: ids[0], lte: ids[1] } } }),
     ]);
 
-    if (spells.length === 0) {
-      res.status(404).json({ success: false, data: 'There are no spells' });
+    if (potions.length === 0) {
+      res.status(404).json({ success: false, data: 'There are no potions' });
       return;
     }
 
     res.status(200).json({
       success: true,
-      length: totalSpells,
-      data: spells.map(spellDto),
-      pagination: pagination(totalSpells, page),
+      length: totalPotions,
+      data: potions.map(potionDto),
+      pagination: pagination(totalPotions, page),
     });
   }),
 
   showBySlug: expressAsyncHandler(async (req: Request, res: Response) => {
     if (!paramValidation(req, res)) return;
 
-    const spellSlug = req.params.slug;
-
     try {
-      const spell = await prisma.spell.findFirstOrThrow({
-        where: { slug: spellSlug },
+      const potion = await prisma.potion.findFirstOrThrow({
+        where: { slug: req.params.slug },
       });
-      res.status(200).json({ success: true, data: spellDto(spell) });
+      res.status(200).json({ success: true, data: potionDto(potion) });
     } catch (err) {
-      res.status(404).json({ success: false, data: 'spell Not Found' });
+      res.status(404).json({ success: false, data: 'potion Not Found' });
     }
   }),
 };
 
-export default spellController;
+export default potionController;
