@@ -32,7 +32,7 @@ wikiRouter.get('/characters/:slug([a-zA-z-]+)', validateSlugParam, characterCont
 // Spell routes
 wikiRouter.get('/spells', validatePageQuery, spellController.index);
 wikiRouter.get('/spells/:id([\\d]+)', validateIdParam, spellController.showById);
-// wikiRouter.get('/spells/:ids([\\d,]+)', validateIdsParam, spellController.showByIds);
+wikiRouter.get('/spells/:ids([\\d,]+)', validateIdsParam, spellController.showByIds);
 wikiRouter.get('/spells/:slug([a-zA-z-]+)', validateSlugParam, spellController.showBySlug);
 
 // // Potion routes

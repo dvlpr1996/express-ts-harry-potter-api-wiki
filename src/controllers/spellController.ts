@@ -48,6 +48,35 @@ const spellController = {
     }
   }),
 
+  showByIds: expressAsyncHandler(async (req: Request, res: Response) => {
+    if (!paramValidation(req, res)) return;
+
+    const page = parseInt(req.query.page as string, 10) || 1;
+
+    const ids = req.params.ids.split(',').map((id) => parseInt(id, 10));
+
+    const [spells, totalSpells] = await prisma.$transaction([
+      prisma.spell.findMany({
+        where: { id: { gte: ids[0], lte: ids[1] } },
+        skip: (page - 1) * PAGINATION_TAKE_NUMBER,
+        take: PAGINATION_TAKE_NUMBER,
+      }),
+      prisma.spell.count({ where: { id: { gte: ids[0], lte: ids[1] } } }),
+    ]);
+
+    if (spells.length === 0) {
+      res.status(404).json({ success: false, data: 'There are no spells' });
+      return;
+    }
+
+    res.status(200).json({
+      success: true,
+      length: totalSpells,
+      data: spells.map(spellDto),
+      pagination: pagination(totalSpells, page),
+    });
+  }),
+
   showBySlug: expressAsyncHandler(async (req: Request, res: Response) => {
     if (!paramValidation(req, res)) return;
 

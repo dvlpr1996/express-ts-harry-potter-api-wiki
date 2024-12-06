@@ -9,6 +9,7 @@ import helmet from 'helmet';
 import hpp from 'hpp';
 import wikiRouter from './routes/wikiRouter';
 
+// todo :: add env mw
 const app: Application = express();
 
 app.use(compression());
