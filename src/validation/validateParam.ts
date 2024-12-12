@@ -21,7 +21,7 @@ export const validateBookIdParam = [
 
 export const validateIdParam = [
   param('id')
-    .isInt({ min: 1, max: 7 })
+    .isInt({ min: 1 })
     .withMessage('ID must be a positive integer')
     .trim()
     .escape()

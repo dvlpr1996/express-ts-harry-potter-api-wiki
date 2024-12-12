@@ -1,4 +1,4 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
 const wikiRouter = express.Router();
 
 import bookController from '../controllers/bookController';
@@ -7,9 +7,7 @@ import spellController from '../controllers/spellController';
 import potionController from '../controllers/potionController';
 import houseController from '../controllers/houseController';
 import staffController from '../controllers/staffController';
-import studentController from '../controllers/studentController';
-import normalCharacterController from '../controllers/normalCharacterController';
-import movieController from '../controllers/movieController';
+
 import {
   validateBookIdParam,
   validateIdParam,
@@ -48,9 +46,11 @@ wikiRouter.get('/houses/:slug([a-zA-z-]+)', validateSlugParam, houseController.s
 wikiRouter.get('/houses/:ids([\\d,]+)', validateIdsParam, houseController.showByIds);
 wikiRouter.get('/houses/:id([\\d]+)/features', validateIdParam, houseController.showFeatures);
 
-// // Staff routes
-// wikiRouter.get('/staffs', staffController.index);
-// wikiRouter.get('/staffs/:character', staffController.show);
+// Staff routes
+wikiRouter.get('/staffs', validatePageQuery, staffController.index);
+wikiRouter.get('/staffs/:id([\\d]+)', validateIdParam, staffController.showById);
+wikiRouter.get('/staffs/:ids([\\d,]+)', validateIdsParam, staffController.showByIds);
+wikiRouter.get('/staffs/:slug([a-zA-z-]+)', validateSlugParam, staffController.showBySlug);
 
 // // Student routes
 // wikiRouter.get('/students', studentController.index);
