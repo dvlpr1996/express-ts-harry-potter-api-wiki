@@ -7,6 +7,7 @@ import spellController from '../controllers/spellController';
 import potionController from '../controllers/potionController';
 import houseController from '../controllers/houseController';
 import staffController from '../controllers/staffController';
+import studentController from '../controllers/studentController';
 
 import {
   validateBookIdParam,
@@ -53,8 +54,10 @@ wikiRouter.get('/staffs/:ids([\\d,]+)', validateIdsParam, staffController.showBy
 wikiRouter.get('/staffs/:slug([a-zA-z-]+)', validateSlugParam, staffController.showBySlug);
 
 // // Student routes
-// wikiRouter.get('/students', studentController.index);
-// wikiRouter.get('/students/:character', studentController.show);
+wikiRouter.get('/students', validatePageQuery, studentController.index);
+wikiRouter.get('/students/:id([\\d]+)', validateIdParam, studentController.showById);
+wikiRouter.get('/students/:ids([\\d,]+)', validateIdsParam, studentController.showByIds);
+wikiRouter.get('/students/:slug([a-zA-z-]+)', validateSlugParam, studentController.showBySlug);
 
 // // Normal Character routes
 // wikiRouter.get('/peoples', normalCharacterController.index);
