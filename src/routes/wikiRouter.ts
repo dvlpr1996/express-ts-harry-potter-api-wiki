@@ -8,6 +8,7 @@ import potionController from '../controllers/potionController';
 import houseController from '../controllers/houseController';
 import staffController from '../controllers/staffController';
 import studentController from '../controllers/studentController';
+import normalCharacterController from '../controllers/normalCharacterController';
 
 import {
   validateBookIdParam,
@@ -53,15 +54,17 @@ wikiRouter.get('/staffs/:id([\\d]+)', validateIdParam, staffController.showById)
 wikiRouter.get('/staffs/:ids([\\d,]+)', validateIdsParam, staffController.showByIds);
 wikiRouter.get('/staffs/:slug([a-zA-z-]+)', validateSlugParam, staffController.showBySlug);
 
-// // Student routes
+// Student routes
 wikiRouter.get('/students', validatePageQuery, studentController.index);
 wikiRouter.get('/students/:id([\\d]+)', validateIdParam, studentController.showById);
 wikiRouter.get('/students/:ids([\\d,]+)', validateIdsParam, studentController.showByIds);
 wikiRouter.get('/students/:slug([a-zA-z-]+)', validateSlugParam, studentController.showBySlug);
 
-// // Normal Character routes
-// wikiRouter.get('/peoples', normalCharacterController.index);
-// wikiRouter.get('/peoples/:character', normalCharacterController.show);
+// Normal Character routes
+wikiRouter.get('/peoples', validatePageQuery, normalCharacterController.index);
+wikiRouter.get('/peoples/:id([\\d]+)', validateIdParam, normalCharacterController.showById);
+wikiRouter.get('/peoples/:ids([\\d,]+)', validateIdsParam, normalCharacterController.showByIds);
+wikiRouter.get('/peoples/:slug([a-zA-z-]+)', validateSlugParam, normalCharacterController.showBySlug);
 
 // // Movie routes
 // wikiRouter.get('/movies', movieController.index);
