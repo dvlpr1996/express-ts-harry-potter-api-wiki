@@ -5,9 +5,11 @@
 Harry Potter Restful Api with Express, typescript and sqlite3
 
 ## Usage
-first config your database connection
+
+first config your sql database connection
 
 ```bash
+npx prisma db seed
 npx prisma migrate dev
 ```
 
