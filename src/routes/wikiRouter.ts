@@ -36,15 +36,17 @@ wikiRouter.get('/spells/:ids([\\d,]+)', validateIdsParam, spellController.showBy
 wikiRouter.get('/spells/:slug([a-zA-z-]+)', validateSlugParam, spellController.showBySlug);
 
 // Potion routes
-wikiRouter.get('/potions', potionController.index);
-wikiRouter.get('/potions/:id([\\d]+)', potionController.showById);
+wikiRouter.get('/potions', validatePageQuery, potionController.index);
+wikiRouter.get('/potions/:id([\\d]+)', validateIdParam, potionController.showById);
 wikiRouter.get('/potions/:ids([\\d,]+)', validateIdsParam, potionController.showByIds);
 wikiRouter.get('/potions/:slug([a-zA-z-]+)', validateSlugParam, potionController.showBySlug);
 
-// // House routes
-// wikiRouter.get('/houses', houseController.index);
-// wikiRouter.get('/houses/:house', houseController.show);
-// wikiRouter.get('/houses/:house/features', houseController.showFeatures);
+// House routes
+wikiRouter.get('/houses', validatePageQuery, houseController.index);
+wikiRouter.get('/houses/:id([\\d]+)', validateIdParam, houseController.showById);
+wikiRouter.get('/houses/:slug([a-zA-z-]+)', validateSlugParam, houseController.showBySlug);
+wikiRouter.get('/houses/:ids([\\d,]+)', validateIdsParam, houseController.showByIds);
+wikiRouter.get('/houses/:id([\\d]+)/features', validateIdParam, houseController.showFeatures);
 
 // // Staff routes
 // wikiRouter.get('/staffs', staffController.index);

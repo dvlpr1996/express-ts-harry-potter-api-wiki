@@ -7,6 +7,9 @@ Harry Potter Restful Api with Express, typescript and sqlite3
 ## Usage
 first config your database connection
 
+```bash
+npx prisma migrate dev
+```
 
 ## Available Endpoints
 
@@ -59,4 +62,3 @@ first config your database connection
 ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
 ![Prisma](https://img.shields.io/badge/-Prisma-2D3748?style=flat&logo=prisma&logoColor=white)
-

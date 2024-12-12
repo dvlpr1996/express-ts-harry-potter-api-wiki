@@ -13,13 +13,13 @@ const houseSeeder = async () => {
         slug: prepareSlugData(house.name),
         color: prepareData(house.color),
         ghostName: prepareData(house.ghost),
-        commonRoomLocation: prepareData(house.commonRoomLocation),
-        commonRoomEntrance: prepareData(house.commonRoomEntrance),
+        commonRoomLocation: prepareData(house.common_room[0].location),
+        commonRoomEntrance: prepareData(house.common_room[1].entrance),
         founder: prepareData(house.founder),
         animal: prepareData(house.animal),
         element: prepareData(house.element),
-        slogan: prepareData(house.slogan) || null,
-        bannerPath: prepareData(house.bannerPath) || null,
+        slogan: prepareData(house.slogan),
+        bannerPath: prepareData(house.banner),
       },
     });
   }
