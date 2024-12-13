@@ -1,7 +1,7 @@
 # Changelog
 
-All notable changes to dvlpr1996/express-typescript-harry-potter-api-wiki will be documented in this file
+All notable changes to dvlpr1996/express-ts-harry-potter-api-wiki will be documented in this file
 
-## 0.1.0 (2024-11-21)
+## 0.1.0 (2024-12-13)
 
 - initial release

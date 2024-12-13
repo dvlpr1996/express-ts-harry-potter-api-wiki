@@ -1,11 +1,11 @@
 {
   "name": "express-typescript-harry-potter-api-wiki",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "main": "./src/app.ts",
   "description": "harry potter api wiki with Express and typescript",
   "repository": {
     "type": "git",
-    "url": "fake"
+    "url": "https://github.com/dvlpr1996/express-ts-harry-potter-api-wiki"
   },
   "keywords": [
     "express-typescript-harry-potter-api-wiki",
