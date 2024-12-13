@@ -1,7 +1,6 @@
 import { House } from '@prisma/client';
 import { IMAGE_PATH } from '../../config/constant';
 import path from 'path';
-import { fileCheckExists } from '../../utils/DbUtils';
 
 const houseDto = (house: House) => ({
   id: house.id,

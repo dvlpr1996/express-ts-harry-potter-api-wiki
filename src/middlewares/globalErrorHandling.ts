@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 
-const globalErrorHandling = (err: any, req: Request, res: Response, next: NextFunction) => {
+const globalErrorHandling = (err: any, _req: Request, res: Response, _next: NextFunction) => {
   console.error(err.stack);
 
   res.status(err.status || 500).json({
