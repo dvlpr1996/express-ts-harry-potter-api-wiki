@@ -1,4 +1,6 @@
 import { Movie } from '@prisma/client';
+import { IMAGE_PATH } from '../../config/constant';
+import path from 'path';
 
 const movieDto = (movie: Movie) => ({
   id: movie.id,
@@ -13,7 +15,7 @@ const movieDto = (movie: Movie) => ({
   releaseDate: movie.releaseDate,
   runningTime: movie.runningTime,
   budget: movie.budget,
-  poster: movie.poster,
+  poster: path.join(IMAGE_PATH, movie.poster ?? ''),
   createdAt: movie.createdAt.toLocaleDateString(),
 });
 

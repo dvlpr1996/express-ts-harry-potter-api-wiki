@@ -1,4 +1,7 @@
 import { House } from '@prisma/client';
+import { IMAGE_PATH } from '../../config/constant';
+import path from 'path';
+import { fileCheckExists } from '../../utils/DbUtils';
 
 const houseDto = (house: House) => ({
   id: house.id,
@@ -12,7 +15,7 @@ const houseDto = (house: House) => ({
   slogan: house.slogan,
   commonRoomLocation: house.commonRoomLocation,
   commonRoomEntrance: house.commonRoomEntrance,
-  bannerPath: house.bannerPath,
+  bannerPath: path.join(IMAGE_PATH, house.bannerPath ?? ''),
   createdAt: house.createdAt.toLocaleDateString(),
   updatedAt: house.updatedAt.toLocaleDateString(),
 });

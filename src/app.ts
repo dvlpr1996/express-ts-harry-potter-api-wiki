@@ -10,7 +10,6 @@ import hpp from 'hpp';
 import wikiRouter from './routes/wikiRouter';
 import { checkEnvVars } from './middlewares/checkEnvVars';
 
-// todo :: add env mw
 const app: Application = express();
 
 app.use(checkEnvVars);
