@@ -1,4 +1,5 @@
 import rateLimit from 'express-rate-limit';
+import 'dotenv/config';
 
 const rateLimitConfig = rateLimit({
   windowMs: (process.env.RATE_LIMIT_WINDOW_MS as number | undefined) || 15 * 60 * 1000,
