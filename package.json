@@ -28,13 +28,16 @@
   },
   "homepage": "https://github.com/dvlpr1996/express-ts-harry-potter-api-wiki",
   "dependencies": {
+    "@prisma/client": "^6.0.1",
     "@types/sqlite3": "^3.1.11",
     "@typescript-eslint/eslint-plugin": "^8.16.0",
     "@typescript-eslint/parser": "^8.16.0",
     "body-parser": "^1.20.3",
     "compression": "^1.7.5",
     "connect-timeout": "^1.9.0",
+    "dotenv": "^16.4.7",
     "eslint": "^9.15.0",
+    "express": "^4.21.2",
     "express-async-handler": "^1.2.0",
     "express-rate-limit": "^7.4.1",
     "express-validator": "^7.2.0",
@@ -43,14 +46,12 @@
     "sqlite3": "^5.1.7"
   },
   "devDependencies": {
-    "@prisma/client": "^6.0.1",
     "@types/compression": "^1.7.5",
     "@types/connect-timeout": "^0.0.39",
     "@types/express": "^5.0.0",
     "@types/hpp": "^0.2.6",
     "@types/node": "^22.10.1",
     "eslint-config-prettier": "^9.1.0",
-    "express": "^4.21.1",
     "nodemon": "^3.1.7",
     "prettier": "^3.3.3",
     "prisma": "^6.0.1",
@@ -58,9 +59,9 @@
     "typescript": "^5.7.2"
   },
   "scripts": {
-    "start": "node dist/server.js",
+    "start": "NODE_ENV=production node dist/server.js",
     "build": "tsc",
-    "dev": "nodemon --watch src --exec ts-node server.ts"
+    "server": "nodemon --watch src --exec ts-node server.ts"
   },
   "prisma": {
     "seed": "ts-node prisma/databaseSeeder.ts"
