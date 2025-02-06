@@ -8,6 +8,8 @@ Harry Potter Restful Api with Express, typescript and sqlite3
 
 first config your sql database connection
 
+second create a new .env file based on the .env.example
+
 ```bash
 npx prisma migrate dev
 npx prisma db seed
