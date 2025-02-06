@@ -1,6 +1,6 @@
 import express, { Application, Request, Response, NextFunction } from 'express';
-import notFoundErrorHandling from './middlewares/notFoundErrorHandling';
-import globalErrorHandling from './middlewares/globalErrorHandling';
+import notFoundErrorHandler from './middlewares/notFoundErrorHandler';
+import globalErrorHandler from './middlewares/globalErrorHandler';
 import rateLimitConfig from './config/rateLimitConfig';
 import bodyParser from 'body-parser';
 import timeout from 'connect-timeout';
@@ -9,6 +9,8 @@ import helmet from 'helmet';
 import hpp from 'hpp';
 import wikiRouter from './routes/wikiRouter';
 import { checkEnvVars } from './middlewares/checkEnvVars';
+import ApiError from './errors/apiError';
+import homeRouter from './routes/homeRouter';
 
 const app: Application = express();
 
@@ -45,9 +47,7 @@ app.use(helmet());
 
 app.use(
   helmet({
-    contentSecurityPolicy: false,
     crossOriginOpenerPolicy: { policy: 'same-origin' },
-    crossOriginResourcePolicy: { policy: 'same-origin' },
     frameguard: { action: 'deny' },
     hidePoweredBy: true,
     ieNoOpen: true,
@@ -75,18 +75,16 @@ app.use(helmet.crossOriginResourcePolicy({ policy: 'same-origin' }));
 app.use(
   helmet.contentSecurityPolicy({
     directives: {
-      defaultSrc: ["'self'"], // Allow content only from the same origin
-      scriptSrc: ["'self'"], // Allow scripts only from the same origin
-      styleSrc: ["'self'", 'https:'], // Allow styles from the same origin and HTTPS
-      imgSrc: ["'self'", 'data:', 'https:'], // Allow images from the same origin, data URIs, and HTTPS
-      connectSrc: ["'self'"], // Restrict connections (e.g., XHR, WebSocket)
-      fontSrc: ["'self'", 'https:'], // Allow fonts from the same origin and HTTPS
-      objectSrc: ["'none'"], // Disallow plugins like Flash
-      frameAncestors: ["'none'"], // Prevent this site from being framed
-      // Automatically upgrade HTTP requests to HTTPS
-      upgradeInsecureRequests: [], // Automatically upgrade HTTP to HTTPS
+      defaultSrc: ["'none'"],
+      scriptSrc: ["'none'"],
+      styleSrc: ["'none'"],
+      imgSrc: ["'none'"],
+      connectSrc: ["'none'"],
+      fontSrc: ["'none'"],
+      objectSrc: ["'none'"],
+      frameAncestors: ["'none'"],
       scriptSrcAttr: ["'none'"],
-      scriptSrcElem: ["'self'"],
+      scriptSrcElem: ["'none'"],
     },
   })
 );
@@ -96,11 +94,13 @@ app.use(hpp());
 app.use(rateLimitConfig);
 
 app.use('/api/v1', wikiRouter);
+app.use('/api/v1', homeRouter);
+
 app.all('*', (req: Request, _res: Response, _next: NextFunction) => {
-  throw new Error(`The Route '${req.originalUrl}' Does Not Exists`);
+  throw new ApiError(`The Route '${req.originalUrl}' Does Not Exist`, 404, [], 'NOT_FOUND');
 });
 
-app.use(notFoundErrorHandling);
-app.use(globalErrorHandling);
+app.use(notFoundErrorHandler);
+app.use(globalErrorHandler);
 
 export default app;
