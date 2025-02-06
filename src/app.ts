@@ -72,23 +72,6 @@ app.use(
 app.use(helmet.crossOriginEmbedderPolicy({ policy: 'require-corp' }));
 app.use(helmet.crossOriginResourcePolicy({ policy: 'same-origin' }));
 
-app.use(
-  helmet.contentSecurityPolicy({
-    directives: {
-      defaultSrc: ["'none'"],
-      scriptSrc: ["'none'"],
-      styleSrc: ["'none'"],
-      imgSrc: ["'none'"],
-      connectSrc: ["'none'"],
-      fontSrc: ["'none'"],
-      objectSrc: ["'none'"],
-      frameAncestors: ["'none'"],
-      scriptSrcAttr: ["'none'"],
-      scriptSrcElem: ["'none'"],
-    },
-  })
-);
-
 app.use(hpp());
 
 app.use(rateLimitConfig);
